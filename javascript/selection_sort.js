@@ -1,5 +1,19 @@
 function selectionSort(arr) {
-  // type your code here
+  const n = arr.length;
+
+  for (let i = 1; i < n; i++) {
+    const currentElement = arr[i];
+    let j = i - 1;
+
+    while (j >= 0 && arr[j] > currentElement) {
+      arr[j + 1] = arr[j];
+      j--;
+    }
+
+    arr[j + 1] = currentElement;
+  }
+
+  return arr;
 }
 
 if (require.main === module) {
